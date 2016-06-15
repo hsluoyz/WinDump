@@ -1113,7 +1113,7 @@ init_addrtoname(u_int32_t localnet, u_int32_t mask)
 	init_etherarray();
 	init_servarray();
 	init_eprotoarray();
-	init_protoidarray();
+	//init_protoidarray();
 	init_ipxsaparray();
 }
 
