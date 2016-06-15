@@ -443,6 +443,26 @@ static int tcpdump_printf(netdissect_options *ndo _U_,
   return ret;
 }
 
+static void init_npcap_dll_path()
+{
+	BOOL(WINAPI *SetDllDirectory)(LPCTSTR);
+	char sysdir_name[512];
+	int len;
+
+	SetDllDirectory = (BOOL(WINAPI *)(LPCTSTR)) GetProcAddress(GetModuleHandle("kernel32.dll"), "SetDllDirectoryA");
+	if (SetDllDirectory == NULL) {
+		error("Error in SetDllDirectory");
+	}
+	else {
+		len = GetSystemDirectory(sysdir_name, 480);	//	be safe
+		if (!len)
+			error("Error in GetSystemDirectory (%d)", GetLastError());
+		strcat(sysdir_name, "\\Npcap");
+		if (SetDllDirectory(sysdir_name) == 0)
+			error("Error in SetDllDirectory(\"System32\\Npcap\")");
+	}
+}
+
 int
 main(int argc, char **argv)
 {
@@ -466,6 +486,9 @@ main(int argc, char **argv)
 	int devnum;
 #endif
 	int status;
+
+	init_npcap_dll_path();
+
 #ifdef WIN32
 	u_int UserBufferSize = 1000000;
 	if(wsockinit() != 0) return 1;
