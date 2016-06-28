@@ -47,7 +47,7 @@
 #ifndef __sctpHeader_h__
 #define __sctpHeader_h__
 
-#include <sctpConstants.h>
+#include "sctpConstants.h"
 
 #ifdef	__cplusplus
 extern "C" {

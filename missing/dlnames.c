@@ -40,12 +40,12 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "../tcpdump-stdinc.h"
 
 #include <pcap.h>
 #include <string.h>
 
-#include "pcap-missing.h"
+#include "../pcap-missing.h"
 
 struct dlt_choice {
 	const char *name;

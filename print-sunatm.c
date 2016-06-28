@@ -38,7 +38,7 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
  
 struct mbuf;
 struct rtentry;

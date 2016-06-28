@@ -54,7 +54,7 @@ static const char rcsid[] _U_ =
      "@(#) $Header: /tcpdump/master/tcpdump/print-telnet.c,v 1.24 2003/12/29 11:05:10 hannes Exp $";
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include <stdio.h>
 #include <stdlib.h>

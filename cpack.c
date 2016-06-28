@@ -33,7 +33,7 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include "cpack.h"
 #include "extract.h"

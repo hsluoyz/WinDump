@@ -18,7 +18,7 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #ifdef HAVE_MEMORY_H
 #include <memory.h>

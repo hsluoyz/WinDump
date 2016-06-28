@@ -44,7 +44,7 @@ static const char rcsid[] _U_ =
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include "interface.h"
 #include "addrtoname.h"

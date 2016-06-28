@@ -40,13 +40,13 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "../tcpdump-stdinc.h"
 
 #include <pcap.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "pcap-missing.h"
+#include "../pcap-missing.h"
 
 /*
  * Stub versions for platforms that don't support them.

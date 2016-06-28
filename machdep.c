@@ -34,7 +34,7 @@ static const char rcsid[] _U_ =
  * need to do to get it defined?  This is clearly wrong, as we shouldn't
  * have to include UNIX or Windows system header files to get it.
  */
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #ifndef HAVE___ATTRIBUTE__
 #define __attribute__(x)

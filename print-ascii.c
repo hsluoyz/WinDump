@@ -44,7 +44,7 @@
 static const char rcsid[] _U_ =
      "@(#) $Header: /tcpdump/master/tcpdump/print-ascii.c,v 1.16.2.1 2005/07/06 20:54:49 guy Exp $";
 #endif
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 #include <stdio.h>
 
 #include "interface.h"

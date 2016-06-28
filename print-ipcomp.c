@@ -29,7 +29,7 @@ static const char rcsid[] _U_ =
 #endif
 
 #include <string.h>
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include <stdio.h>
 

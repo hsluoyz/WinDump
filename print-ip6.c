@@ -30,7 +30,7 @@ static const char rcsid[] _U_ =
 
 #ifdef INET6
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include <stdio.h>
 #include <stdlib.h>

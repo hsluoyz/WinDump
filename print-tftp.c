@@ -30,12 +30,12 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #ifdef SEGSIZE
 #undef SEGSIZE					/* SINIX sucks */
 #endif
-#include <arpa/tftp.h>
+#include "win32/Include/Arpa/tftp.h"
 
 #include <stdio.h>
 #include <string.h>

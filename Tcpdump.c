@@ -45,11 +45,11 @@ static const char rcsid[] _U_ =
 #include "config.h"
 #endif
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #ifdef WIN32
 #include "getopt.h"
-#include "w32_fzs.h"
+#include "win32/Include/w32_fzs.h"
 extern int strcasecmp (const char *__s1, const char *__s2);
 extern int SIZE_BUF;
 #define off_t long
@@ -907,7 +907,7 @@ main(int argc, char **argv)
 #endif /* WIN32 */
 		*ebuf = '\0';
 		// pd = pcap_open_live(device, snaplen, !pflag, 1000, ebuf);
-		pd = pcap_open(device, snaplen, PCAP_OPENFLAG_NOCAPTURE_LOCAL, 1000, NULL, ebuf); //PCAP_OPENFLAG_NOCAPTURE_LOCAL
+		pd = pcap_open(device, snaplen, 0, 1000, NULL, ebuf); //PCAP_OPENFLAG_NOCAPTURE_LOCAL
 		if (pd == NULL)
 			error("%s", ebuf);
 		else if (*ebuf)

@@ -92,10 +92,22 @@
     <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\lib\WpdPack_4_1_2\Lib\x64;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\lib\WpdPack_4_1_2\Lib\x64;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\lib\WpdPack_4_1_2\Lib;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\lib\WpdPack_4_1_2\Lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">G:\lib\npcap-sdk\Lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">G:\lib\npcap-sdk\Lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G:\lib\npcap-sdk\Lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G:\lib\npcap-sdk\Lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>G:\lib\npcap-sdk\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>G:\lib\npcap-sdk\Include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>G:\lib\npcap-sdk\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>G:\lib\npcap-sdk\Include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Midl>
@@ -105,7 +117,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../../winpcap/wpcap/libpcap/bpf;../../../winpcap/wpcap/libpcap;../../../winpcap/wpcap/libpcap/Win32/Include;../../../winpcap/wpcap/libpcap/Win32/Include/net;../../Win32/Include;../../linux-Include;../../lbl;../../;../../../winpcap/wpcap/win32-extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -151,7 +163,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../../winpcap/wpcap/libpcap/bpf;../../../winpcap/wpcap/libpcap;../../../winpcap/wpcap/libpcap/Win32/Include;../../../winpcap/wpcap/libpcap/Win32/Include/net;../../Win32/Include;../../linux-Include;../../lbl;../../;../../../winpcap/wpcap/win32-extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -193,7 +205,7 @@
     </Midl>
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../../../winpcap/wpcap/libpcap/bpf;../../../winpcap/wpcap/libpcap;../../../winpcap/wpcap/libpcap/Win32/Include;../../../winpcap/wpcap/libpcap/Win32/Include/net;../../Win32/Include;../../linux-Include;../../lbl;../../;../../../winpcap/wpcap/win32-extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -240,7 +252,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>../../../winpcap/wpcap/libpcap/bpf;../../../winpcap/wpcap/libpcap;../../../winpcap/wpcap/libpcap/Win32/Include;../../../winpcap/wpcap/libpcap/Win32/Include/net;../../Win32/Include;../../linux-Include;../../lbl;../../;../../../winpcap/wpcap/win32-extensions;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>

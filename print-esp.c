@@ -32,7 +32,7 @@ static const char rcsid[] _U_ =
 
 #include <string.h>
 
-#include <tcpdump-stdinc.h>
+#include "tcpdump-stdinc.h"
 
 #include <stdlib.h>
 
