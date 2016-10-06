@@ -84,19 +84,19 @@ static struct tok type2str[] = {
 static char tstr[] = " [|ospf]";
 
 #ifdef WIN32
-#define inline __inline
+#define __inline __inline
 #endif /* WIN32 */
 
 /* Forwards */
-static inline void ospf6_print_seqage(u_int32_t, time_t);
-static inline void ospf6_print_bits(const struct bits *, u_char);
+static __inline void ospf6_print_seqage(u_int32_t, time_t);
+static __inline void ospf6_print_bits(const struct bits *, u_char);
 static void ospf6_print_ls_type(u_int, const rtrid_t *,
     const rtrid_t *, const char *);
 static int ospf6_print_lshdr(const struct lsa_hdr *);
 static int ospf6_print_lsa(const struct lsa *);
 static int ospf6_decode_v3(const struct ospf6hdr *, const u_char *);
 
-static inline void
+static __inline void
 ospf6_print_seqage(register u_int32_t seq, register time_t us)
 {
 	register time_t sec = us % 60;
@@ -114,7 +114,7 @@ ospf6_print_seqage(register u_int32_t seq, register time_t us)
 }
 
 
-static inline void
+static __inline void
 ospf6_print_bits(register const struct bits *bp, register u_char options)
 {
 	register char sep = ' ';

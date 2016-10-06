@@ -76,7 +76,7 @@ const struct tok ethertype_values[] = {
     { 0, NULL}
 };
 
-static inline void
+static __inline void
 ether_hdr_print(register const u_char *bp, u_int length)
 {
 	register const struct ether_header *ep;

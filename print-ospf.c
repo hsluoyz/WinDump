@@ -175,7 +175,7 @@ static struct tok lsa_opaque_ri_tlv_cap_values[] = {
 static char tstr[] = " [|ospf]";
 
 #ifdef WIN32
-#define inline __inline
+#define __inline __inline
 #endif /* WIN32 */
 
 static int ospf_print_lshdr(const struct lsa_hdr *);

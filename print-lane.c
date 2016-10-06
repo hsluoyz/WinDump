@@ -60,7 +60,7 @@ static const struct tok lecop2str[] = {
 	{ 0,		NULL }
 };
 
-static inline void
+static __inline void
 lane_hdr_print(register const u_char *bp, int length)
 {
 	register const struct lecdatahdr_8023 *ep;

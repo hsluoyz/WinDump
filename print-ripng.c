@@ -38,7 +38,7 @@ static const char rcsid[] _U_ =
 #include "addrtoname.h"
 #include "extract.h"
 
-#if !defined(IN6_IS_ADDR_UNSPECIFIED) && !defined(_MSC_VER) /* MSVC inline */
+#if !defined(IN6_IS_ADDR_UNSPECIFIED) && !defined(_MSC_VER) /* MSVC __inline */
 static int IN6_IS_ADDR_UNSPECIFIED(const struct in6_addr *addr)
 {
     static const struct in6_addr in6addr_any;        /* :: */

@@ -51,7 +51,7 @@ static unsigned char rfcllc[] = {
 	0x00,
 	0x00 };
 
-static inline void
+static __inline void
 cip_print(int length)
 {
 	/*

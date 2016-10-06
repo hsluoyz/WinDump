@@ -44,7 +44,7 @@ struct symantec_header {
 	u_int8_t  stuff2[36];
 };
 
-static inline void
+static __inline void
 symantec_hdr_print(register const u_char *bp, u_int length)
 {
 	register const struct symantec_header *sp;

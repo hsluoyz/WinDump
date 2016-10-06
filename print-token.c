@@ -46,7 +46,7 @@ static const char rcsid[] _U_ =
 #include "token.h"
 
 /* Extract src, dst addresses */
-static inline void
+static __inline void
 extract_token_addrs(const struct token_header *trp, char *fsrc, char *fdst)
 {
 	memcpy(fdst, (const char *)trp->token_dhost, 6);
@@ -56,7 +56,7 @@ extract_token_addrs(const struct token_header *trp, char *fsrc, char *fdst)
 /*
  * Print the TR MAC header
  */
-static inline void
+static __inline void
 token_hdr_print(register const struct token_header *trp, register u_int length,
 	   register const u_char *fsrc, register const u_char *fdst)
 {

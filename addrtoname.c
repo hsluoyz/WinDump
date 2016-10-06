@@ -317,7 +317,7 @@ static char hex[] = "0123456789abcdef";
 
 /* Find the hash node that corresponds the ether address 'ep' */
 
-static inline struct enamemem *
+static __inline struct enamemem *
 lookup_emem(const u_char *ep)
 {
 	register u_int i, j, k;
@@ -350,7 +350,7 @@ lookup_emem(const u_char *ep)
  * with length 'nlen'
  */
 
-static inline struct enamemem *
+static __inline struct enamemem *
 lookup_bytestring(register const u_char *bs, const unsigned int nlen)
 {
 	struct enamemem *tp;
@@ -392,7 +392,7 @@ lookup_bytestring(register const u_char *bs, const unsigned int nlen)
 
 /* Find the hash node that corresponds the NSAP 'nsap' */
 
-static inline struct enamemem *
+static __inline struct enamemem *
 lookup_nsap(register const u_char *nsap)
 {
 	register u_int i, j, k;
@@ -435,7 +435,7 @@ lookup_nsap(register const u_char *nsap)
 
 /* Find the hash node that corresponds the protoid 'pi'. */
 
-static inline struct protoidmem *
+static __inline struct protoidmem *
 lookup_protoid(const u_char *pi)
 {
 	register u_int i, j;

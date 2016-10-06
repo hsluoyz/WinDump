@@ -858,7 +858,7 @@ extract_header_length(u_int16_t fc)
  * to point to the source and destination MAC addresses in any case if
  * "srcp" and "dstp" aren't null.
  */
-static inline void
+static __inline void
 ieee_802_11_hdr_print(u_int16_t fc, const u_char *p, const u_int8_t **srcp,
     const u_int8_t **dstp)
 {

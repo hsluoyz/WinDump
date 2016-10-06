@@ -46,7 +46,7 @@ static const char rcsid[] _U_ =
  */
 
 /* Extract src, dst addresses */
-static inline void
+static __inline void
 extract_ipfc_addrs(const struct ipfc_header *ipfcp, char *ipfcsrc,
     char *ipfcdst)
 {
@@ -61,7 +61,7 @@ extract_ipfc_addrs(const struct ipfc_header *ipfcp, char *ipfcsrc,
 /*
  * Print the Network_Header
  */
-static inline void
+static __inline void
 ipfc_hdr_print(register const struct ipfc_header *ipfcp _U_,
 	   register u_int length, register const u_char *ipfcsrc,
 	   register const u_char *ipfcdst)

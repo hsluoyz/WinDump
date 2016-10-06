@@ -54,7 +54,7 @@ struct tok arctypemap[] = {
 	{ 0, 0 }
 };
 
-static inline void
+static __inline void
 arcnet_print(const u_char *bp, u_int length, int phds, int flag, u_int seqid)
 {
 	const struct arc_header *ap;

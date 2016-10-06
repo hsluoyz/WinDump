@@ -118,7 +118,7 @@ static u_char fddi_bit_swap[] = {
 /*
  * Print FDDI frame-control bits
  */
-static inline void
+static __inline void
 print_fddi_fc(u_char fc)
 {
 	switch (fc) {
@@ -186,7 +186,7 @@ print_fddi_fc(u_char fc)
 }
 
 /* Extract src, dst addresses */
-static inline void
+static __inline void
 extract_fddi_addrs(const struct fddi_header *fddip, char *fsrc, char *fdst)
 {
 	register int i;
@@ -210,7 +210,7 @@ extract_fddi_addrs(const struct fddi_header *fddip, char *fsrc, char *fdst)
 /*
  * Print the FDDI MAC header
  */
-static inline void
+static __inline void
 fddi_hdr_print(register const struct fddi_header *fddip, register u_int length,
 	   register const u_char *fsrc, register const u_char *fdst)
 {
@@ -232,7 +232,7 @@ fddi_hdr_print(register const struct fddi_header *fddip, register u_int length,
 	}
 }
 
-static inline void
+static __inline void
 fddi_smt_print(const u_char *p _U_, u_int length _U_)
 {
 	printf("<SMT printer not yet implemented>");

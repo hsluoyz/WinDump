@@ -155,7 +155,7 @@ static u_int64_t dccp_seqno(const struct dccp_hdr *dh)
 	return seqno;
 }
 
-static inline unsigned int dccp_basic_hdr_len(const struct dccp_hdr *dh)
+static __inline unsigned int dccp_basic_hdr_len(const struct dccp_hdr *dh)
 {
 	return sizeof(*dh) + (DCCPH_X(dh) ? sizeof(struct dccp_hdr_ext) : 0);
 }
@@ -187,7 +187,7 @@ trunc:
 	return;
 }
 
-static inline unsigned int dccp_packet_hdr_len(const u_int8_t type)
+static __inline unsigned int dccp_packet_hdr_len(const u_int8_t type)
 {
 	if (type == DCCP_PKT_DATA)
 		return 0;

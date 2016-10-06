@@ -53,7 +53,7 @@ struct firewire_header {
  */
 #define FIREWIRE_HDRLEN		18
 
-static inline void
+static __inline void
 ap1394_hdr_print(register const u_char *bp, u_int length)
 {
 	register const struct firewire_header *fp;
