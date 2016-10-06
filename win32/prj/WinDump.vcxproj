@@ -121,10 +121,10 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\Debug/WinDump.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -137,9 +137,9 @@
     <Link>
       <AdditionalDependencies>Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../../winpcap/wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\../../WinDump.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>.\Debug/WinDump.map</MapFileName>
       <SubSystem>Console</SubSystem>
@@ -162,18 +162,19 @@
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>.\Release/WinDump.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -182,8 +183,8 @@
     <Link>
       <AdditionalDependencies>Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../../winpcap/wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ProgramDatabaseFile>.\../../WinDump.pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -209,10 +210,10 @@
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <PrecompiledHeaderOutputFile>.\Debug/WinDump.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Debug/</AssemblerListingLocation>
-      <ObjectFileName>.\Debug/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Debug/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -225,9 +226,9 @@
     <Link>
       <AdditionalDependencies>Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../../winpcap/wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\../../WinDump.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>.\Debug/WinDump.map</MapFileName>
       <SubSystem>Console</SubSystem>
@@ -251,18 +252,19 @@
     </Midl>
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
-      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;INET6;WIN32;_CONSOLE;__STDC__;WPCAP;HAVE_ADDRINFO=1;HAVE_SOCKADDR_STORAGE=1;HAVE_PCAP_LIST_DATALINKS=1;HAVE_PCAP_SET_DATALINK=1;HAVE_PCAP_DATALINK_NAME_TO_VAL=1;HAVE_PCAP_DATALINK_VAL_TO_DESCRIPTION=1;HAVE_PCAP_DUMP_FTELL=1;HAVE_BPF_DUMP=1;HAVE_PCAP_DUMP_FLUSH=1;HAVE_PCAP_FINDALLDEVS=1;HAVE_PCAP_IF_T=1;HAVE_PCAP_LIB_VERSION=1;SIZEOF_CHAR=1;SIZEOF_SHORT=2;SIZEOF_INT=4;HAVE_REMOTE;_U_=;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <PrecompiledHeaderOutputFile>.\Release/WinDump.pch</PrecompiledHeaderOutputFile>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -271,8 +273,8 @@
     <Link>
       <AdditionalDependencies>Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;wpcap.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>../../../winpcap/wpcap/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <ProgramDatabaseFile>.\../../WinDump.pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
       <SubSystem>Console</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
