@@ -716,32 +716,32 @@ init_servarray(void)
 }
 
 /* in libpcap.a (nametoaddr.c) */
-#if defined(WIN32) && !defined(USE_STATIC_LIBPCAP)
-__declspec(dllimport)
-#else
-extern
-#endif
-const struct eproto {
-	const char *s;
-	u_short p;
-} eproto_db[];
-
-static void
-init_eprotoarray(void)
-{
-	register int i;
-	register struct hnamemem *table;
-
-	for (i = 0; eproto_db[i].s; i++) {
-		int j = htons(eproto_db[i].p) & (HASHNAMESIZE-1);
-		table = &eprototable[j];
-		while (table->name)
-			table = table->nxt;
-		table->name = eproto_db[i].s;
-		table->addr = htons(eproto_db[i].p);
-		table->nxt = newhnamemem();
-	}
-}
+// #if defined(WIN32) && !defined(USE_STATIC_LIBPCAP)
+// __declspec(dllimport)
+// #else
+// extern
+// #endif
+// const struct eproto {
+// 	const char *s;
+// 	u_short p;
+// } eproto_db[];
+// 
+// static void
+// init_eprotoarray(void)
+// {
+// 	register int i;
+// 	register struct hnamemem *table;
+// 
+// 	for (i = 0; eproto_db[i].s; i++) {
+// 		int j = htons(eproto_db[i].p) & (HASHNAMESIZE-1);
+// 		table = &eprototable[j];
+// 		while (table->name)
+// 			table = table->nxt;
+// 		table->name = eproto_db[i].s;
+// 		table->addr = htons(eproto_db[i].p);
+// 		table->nxt = newhnamemem();
+// 	}
+// }
 
 static struct protoidlist {
 	const u_char protoid[5];
@@ -759,34 +759,34 @@ static struct protoidlist {
  * SNAP proto IDs with org code 0:0:0 are actually encapsulated Ethernet
  * types.
  */
-static void
-init_protoidarray(void)
-{
-	register int i;
-	register struct protoidmem *tp;
-	struct protoidlist *pl;
-	u_char protoid[5];
-
-	protoid[0] = 0;
-	protoid[1] = 0;
-	protoid[2] = 0;
-	for (i = 0; eproto_db[i].s; i++) {
-		u_short etype = htons(eproto_db[i].p);
-
-		memcpy((char *)&protoid[3], (char *)&etype, 2);
-		tp = lookup_protoid(protoid);
-		tp->p_name = strdup(eproto_db[i].s);
-	}
-	/* Hardwire some SNAP proto ID names */
-	for (pl = protoidlist; pl->name != NULL; ++pl) {
-		tp = lookup_protoid(pl->protoid);
-		/* Don't override existing name */
-		if (tp->p_name != NULL)
-			continue;
-
-		tp->p_name = pl->name;
-	}
-}
+// static void
+// init_protoidarray(void)
+// {
+// 	register int i;
+// 	register struct protoidmem *tp;
+// 	struct protoidlist *pl;
+// 	u_char protoid[5];
+// 
+// 	protoid[0] = 0;
+// 	protoid[1] = 0;
+// 	protoid[2] = 0;
+// 	for (i = 0; eproto_db[i].s; i++) {
+// 		u_short etype = htons(eproto_db[i].p);
+// 
+// 		memcpy((char *)&protoid[3], (char *)&etype, 2);
+// 		tp = lookup_protoid(protoid);
+// 		tp->p_name = strdup(eproto_db[i].s);
+// 	}
+// 	/* Hardwire some SNAP proto ID names */
+// 	for (pl = protoidlist; pl->name != NULL; ++pl) {
+// 		tp = lookup_protoid(pl->protoid);
+// 		/* Don't override existing name */
+// 		if (tp->p_name != NULL)
+// 			continue;
+// 
+// 		tp->p_name = pl->name;
+// 	}
+// }
 
 static struct etherlist {
 	const u_char addr[6];
@@ -1112,7 +1112,7 @@ init_addrtoname(u_int32_t localnet, u_int32_t mask)
 
 	init_etherarray();
 	init_servarray();
-	init_eprotoarray();
+	//init_eprotoarray();
 	//init_protoidarray();
 	init_ipxsaparray();
 }
