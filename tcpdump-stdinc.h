@@ -47,7 +47,7 @@
 #include <stdio.h>
 #include <winsock2.h>
 #include <Ws2tcpip.h>
-#include "bittypes.h"
+#include "pcap-stdinc.h"
 #include <ctype.h>
 #include <time.h>
 #include <io.h>
