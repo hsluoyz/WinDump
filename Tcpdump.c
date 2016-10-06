@@ -491,7 +491,7 @@ main(int argc, char **argv)
 
 #ifdef WIN32
 	u_int UserBufferSize = 1000000;
-	if(wsockinit() != 0) return 1;
+	// if(wsockinit() != 0) return 1;
 #endif /* WIN32 */
 
         gndo->ndo_Oflag=1;

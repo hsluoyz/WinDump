@@ -684,36 +684,36 @@ ipxsap_string(u_short port)
 	return (tp->name);
 }
 
-static void
-init_servarray(void)
-{
-	struct servent *sv;
-	register struct hnamemem *table;
-	register int i;
-	char buf[sizeof("0000000000")];
-
-	while ((sv = getservent()) != NULL) {
-		int port = ntohs(sv->s_port);
-		i = port & (HASHNAMESIZE-1);
-		if (strcmp(sv->s_proto, "tcp") == 0)
-			table = &tporttable[i];
-		else if (strcmp(sv->s_proto, "udp") == 0)
-			table = &uporttable[i];
-		else
-			continue;
-
-		while (table->name)
-			table = table->nxt;
-		if (nflag) {
-			(void)snprintf(buf, sizeof(buf), "%d", port);
-			table->name = strdup(buf);
-		} else
-			table->name = strdup(sv->s_name);
-		table->addr = port;
-		table->nxt = newhnamemem();
-	}
-	endservent();
-}
+// static void
+// init_servarray(void)
+// {
+// 	struct servent *sv;
+// 	register struct hnamemem *table;
+// 	register int i;
+// 	char buf[sizeof("0000000000")];
+// 
+// 	while ((sv = getservent()) != NULL) {
+// 		int port = ntohs(sv->s_port);
+// 		i = port & (HASHNAMESIZE-1);
+// 		if (strcmp(sv->s_proto, "tcp") == 0)
+// 			table = &tporttable[i];
+// 		else if (strcmp(sv->s_proto, "udp") == 0)
+// 			table = &uporttable[i];
+// 		else
+// 			continue;
+// 
+// 		while (table->name)
+// 			table = table->nxt;
+// 		if (nflag) {
+// 			(void)snprintf(buf, sizeof(buf), "%d", port);
+// 			table->name = strdup(buf);
+// 		} else
+// 			table->name = strdup(sv->s_name);
+// 		table->addr = port;
+// 		table->nxt = newhnamemem();
+// 	}
+// 	endservent();
+// }
 
 /* in libpcap.a (nametoaddr.c) */
 // #if defined(WIN32) && !defined(USE_STATIC_LIBPCAP)
@@ -1111,7 +1111,7 @@ init_addrtoname(u_int32_t localnet, u_int32_t mask)
 		return;
 
 	init_etherarray();
-	init_servarray();
+	//init_servarray();
 	//init_eprotoarray();
 	//init_protoidarray();
 	init_ipxsaparray();
