@@ -1,12 +1,24 @@
 # WinDump for Npcap
+
+[![Release](https://img.shields.io/github/release/hsluoyz/windump.svg)](https://github.com/hsluoyz/windump/releases)
+![License](https://img.shields.io/github/license/hsluoyz/windump.svg)
+![Downloads](https://img.shields.io/github/downloads/hsluoyz/windump/latest/total.svg)
+![TotalDownloads](https://img.shields.io/github/downloads/hsluoyznmap/windump/total.svg)
+
 A user-mode packet dump software based on [Npcap](https://github.com/nmap/npcap). It's a fork of the [original WinDump](http://www.winpcap.org/windump/).
 
 # Build
 
-1. Get latest [Npcap SDK](https://github.com/nmap/npcap#development-kit)
-2. Build ``win32\prj\WinDump.sln`` with **Visual Studio 2013** or later. **Note**: in this MSVC project, the Npcap SDK is pointing to ``J:\npcap\npcap-sdk``, you may need to adjust this setting to your Npcap SDK location.
+1. Get the latest [Npcap SDK](https://github.com/nmap/npcap#development-kit).
+2. Build ``win32\prj\WinDump.sln`` with **Visual Studio 2013** or later.
+3. **Note**: in this MSVC project, the Npcap SDK is pointing to ``J:\npcap\npcap-sdk``, you may need to adjust this setting to your own Npcap SDK location.
+
+# Releases
+
+https://github.com/hsluoyz/WinDump/releases
 
 # Usage
+
 Get the list of interfaces:
 ```
 J:\github_repos\WinDump\win32\prj\Win32\Release>WinDump.exe -D
@@ -37,7 +49,7 @@ WinDump.exe: listening on \Device\NPF_{385F30D0-9166-45D3-BBC6-F1D9C5300AF9}
 23:09:29.722564 IP
 ```
 
-For advanced usage, please refer to [WinDump docs](http://www.winpcap.org/windump/docs/default.htm).
+For other advanced usage, please refer to [WinDump docs](http://www.winpcap.org/windump/docs/default.htm).
 
 # How to use Npcap first when Npcap and WinPcap coexist?
 
