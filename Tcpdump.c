@@ -1254,12 +1254,12 @@ print_packet(u_char *user, const struct pcap_pkthdr *h, const u_char *sp)
 	{
 		packet[i]=i%256;
 	}
-	for(i=0;i<1;i++)
-		if (pcap_sendpacket(pd, packet, 100 /* size */) != 0)
-		{
-			error("%s", pcap_geterr(pd));
-			return;
-		}
+// 	for(i=0;i<1;i++)
+// 		if (pcap_sendpacket(pd, packet, 100 /* size */) != 0)
+// 		{
+// 			error("%s", pcap_geterr(pd));
+// 			return;
+// 		}
 
 	++packets_captured;
 
