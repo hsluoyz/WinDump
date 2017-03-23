@@ -3,7 +3,7 @@
 [![Release](https://img.shields.io/github/release/hsluoyz/windump.svg)](https://github.com/hsluoyz/windump/releases)
 ![License](https://img.shields.io/github/license/hsluoyz/windump.svg)
 ![Downloads](https://img.shields.io/github/downloads/hsluoyz/windump/latest/total.svg)
-![TotalDownloads](https://img.shields.io/github/downloads/hsluoyznmap/windump/total.svg)
+![TotalDownloads](https://img.shields.io/github/downloads/hsluoyz/windump/total.svg)
 
 A user-mode packet dump software based on [Npcap](https://github.com/nmap/npcap). It's a fork of the [original WinDump](http://www.winpcap.org/windump/).
 
