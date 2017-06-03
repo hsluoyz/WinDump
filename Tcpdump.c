@@ -889,9 +889,20 @@ main(int argc, char **argv)
 			error("-f and -r options are incompatible");
 	} else {
 		if (device == NULL) {
-			device = pcap_lookupdev(ebuf);
-			if (device == NULL)
+			// pcap_lookupdev() will return Unicode string,
+			// which will cause fault if passed to pcap_open() which accepts ASCII.
+			// So we don't use it any more.
+			// See: https://github.com/the-tcpdump-group/libpcap/issues/562
+// 			device = pcap_lookupdev(ebuf);
+// 			if (device == NULL)
+// 				error("%s", ebuf);
+
+			if (pcap_findalldevs(&devpointer, ebuf) < 0)
 				error("%s", ebuf);
+			if (devpointer == NULL)
+				error("%s", "no adapter available");
+
+			device = devpointer->name;
 		}
 #ifdef WIN32
 		if(strlen(device) == 1)	//we assume that an ASCII string is always longer than 1 char
